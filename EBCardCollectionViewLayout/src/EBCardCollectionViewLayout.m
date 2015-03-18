@@ -219,7 +219,7 @@ static NSString * const CellKind = @"CardCell";
         //  Bounces
         if (_layoutType == EBCardCollectionLayoutHorizontal) {
             CGFloat posX = round(rawPageValue) * [self pageWidth] - _offset.horizontal/2;
-            posX = MAX(0, posX);
+            posX = MAX(- self.collectionView.contentInset.left, posX);
             retVal.x = posX;
         } else {
             CGFloat posY = round(rawPageValue) * [self pageHeight] - _offset.vertical/2;
