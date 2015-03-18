@@ -204,7 +204,7 @@ static NSString * const CellKind = @"CardCell";
             retVal.x = nextPage * [self pageWidth];
             
             if (nextPage < [self.collectionView numberOfItemsInSection:0]) {
-                retVal.x = MAX(retVal.x - _offset.horizontal/2, 0);
+                retVal.x = MAX(retVal.x - _offset.horizontal/2, - self.collectionView.contentInset.left);
             }
             
         } else {
